@@ -1,0 +1,28 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% set OrionLabelsConfig = config('OrionLabels').config %}
+{% set OrionLabelFound = false %}
+
+{# 
+   OrionLabelsConfig.OrionLabelsPropertyGroupId
+   OrionLabelsConfig.OrionLabelsPropertyDiscountId
+#}
+
+
+{% block component_product_box_badges %}
+  
+{% for groupId in product.propertyIds %}
+  {% if groupId == OrionLabelsConfig.OrionLabelsPropertyDiscountId %}
+    {% set OrionLabelFound = true %}
+  {% endif %}
+{% endfor %}
+
+  {% if OrionLabelFound %}
+  <div style="width:100%;position:absolute;top:0;right:0;padding:0.2rem;background:#00ff00">
+    OrionLabeled
+  </div>
+  {% endif %}
+
+  {{ parent() }}
+
+{% endblock %}

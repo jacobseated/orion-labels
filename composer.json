@@ -1,0 +1,23 @@
+{
+  "name": "orion/labels",
+  "description": "Add product labels via properties.",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+        "name": "JacobSeated"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "OrionLabels\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "OrionLabels\\OrionLabels",
+    "label": {
+      "de-DE": "",
+      "en-GB": "Orion Labels"
+    }
+  }
+}
